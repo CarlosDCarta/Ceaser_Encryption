@@ -16,7 +16,18 @@ def encrypt(text, shift_amount):
         new_letter = alphabet[new_position]
         cipher_text += new_letter
     print(f"The encoded text is {cipher_text}")
-    
-     
 
-encrypt(text, shift)
+def decrypt(text, shift_amount):
+    cipher_text = ""
+    for i in text:
+        position = alphabet.index(i)
+        new_position = position - shift_amount
+        new_letter = alphabet[new_position]
+        cipher_text += new_letter
+    print(f"The decoded text is {cipher_text}")
+
+direction = direction.lower()
+if direction == "encode":
+    encrypt(text , shift)
+else:
+    decrypt(text, shift)
